@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.buttonku {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buttonku:hover {
+  background-color: #45a049;
+}
+.center{
+  text-align: center;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+<h3 class="center">Order Ke WA dengan Javascript</h3>
+
+<div>
+  <form action="">
+    <label for="nama">Nama</label>
+    <input type="text" id="nama" name="nama" placeholder="Nama..">
+
+    <label for="barang">Link barang : </label>
+    <input type="text" id="barang" name="barang" placeholder="tokosaya.com/linkbarang">
+
+    <label for="metodebayar">Metode Pembayaran</label>
+    <select id="metodebayar" name="metodebayar">
+      <option value="">Pilih metode pembayaran :</option>
+      <option value="VA BRI">VA BRI</option>
+      <option value="VA BCA">VA BCA</option>
+      <option value="DANA">DANA</option>
+      <option value="OVO">OVO</option>
+      <option value="COD">COD</option>
+    </select>
+  
+    <button class="buttonku" id="submit">Order Ke Whatsapp</button>
+  </form>
+</div>
+
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btnSubmit = document.querySelector('#submit');
+    btnSubmit.addEventListener('click', () => {
+      const nama = document.querySelector('#nama').value;
+      const barang = document.querySelector('#barang').value;
+      const metodebayar = document.querySelector('#metodebayar').value;
+      const apiwhatsapp = 'https://wa.me/6289533444555?text=';
+      window.open(apiwhatsapp + 'Halo%20nama%20saya%20'+ nama + '%2C%0ASaya%20tertarik%20dengan%20barang%20yang%20ada%20di%20link%20berikut%20%3A%0A'+ barang + '%0ASaya%20ingin%20membayar%20dengan%20metode%20pembayaran%20%3A%0A'+ metodebayar + '%0ATerima%20kasih.');
+    });
+
+  });
+</script>
+
+</html>
+
+
